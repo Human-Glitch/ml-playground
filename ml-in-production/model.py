@@ -52,5 +52,3 @@ def evaluate_model(model, X_test, y_test):
 def save_model(model):
     pk.dump(model, open('models/rf_v1', 'wb'))
 
-rf = build_model()
-

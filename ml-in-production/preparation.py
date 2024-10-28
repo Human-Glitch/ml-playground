@@ -31,7 +31,3 @@ def parse_garden_cols(data):
         else: data.garden[i] = int(re.findall(r'\d+', data.garden[i])[0])
 
     return data
-
-
-df = prepare_data()
-print(df)
