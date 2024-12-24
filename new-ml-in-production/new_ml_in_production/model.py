@@ -3,6 +3,7 @@ from sklearn.model_selection import train_test_split
 from preparation import prepare_data
 from sklearn.model_selection import GridSearchCV
 import pickle as pk
+from config import settings
 
 def build_model():
 
@@ -50,5 +51,5 @@ def evaluate_model(model, X_test, y_test):
    return model.score(X_test, y_test)
     
 def save_model(model):
-    pk.dump(model, open('models/rf_v1', 'wb'))
+    pk.dump(model, open(f'{settings.model_path}/{settings.model_name}', 'wb'))
 
