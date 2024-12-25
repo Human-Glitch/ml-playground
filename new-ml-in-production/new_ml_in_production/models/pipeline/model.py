@@ -1,9 +1,9 @@
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
-from preparation import prepare_data
+from models.pipeline.preparation import prepare_data
 from sklearn.model_selection import GridSearchCV
 import pickle as pk
-from config import settings, logger
+from config.config import settings, logger
 
 def build_model():
     logger.info("Building the model")

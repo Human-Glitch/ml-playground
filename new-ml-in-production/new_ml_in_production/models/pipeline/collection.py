@@ -1,6 +1,6 @@
 import pandas as pd
-from config import logger, engine
-from db_model import RentApartments
+from config.config import logger, engine
+from database.db_model import RentApartments
 from sqlalchemy import select
 
 def load_data_from_db():

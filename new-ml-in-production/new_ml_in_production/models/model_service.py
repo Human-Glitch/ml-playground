@@ -1,7 +1,7 @@
 from pathlib import Path
-from model import build_model
+from models.pipeline.model import build_model
 import pickle as pk
-from config import settings, logger
+from config.config import settings, logger
 
 class ModelService:
     def __init__(self) -> None:

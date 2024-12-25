@@ -1,5 +1,5 @@
-from collection import load_data_from_db
-from config import logger
+from models.pipeline.collection import load_data_from_db
+from config.config import logger
 import re
 import pandas as pd
 

@@ -1,5 +1,5 @@
-from model_service import ModelService
-from config import logger
+from models.model_service import ModelService
+from config.config import logger
 
 @logger.catch
 def main():
