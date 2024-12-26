@@ -1,5 +1,5 @@
 """
-This module contains the ModelService class which is 
+This module contains the ModelService class which is
 responsible for loading the model and making predictions.
 """
 
@@ -23,7 +23,7 @@ class ModelService:
             logger.warning(
                 f'Model not found in {model_path}. Building a new model.'
             )
-            
+
             build_model()
 
         logger.info(f'Model {settings.model_name} exists. Loading model.')
