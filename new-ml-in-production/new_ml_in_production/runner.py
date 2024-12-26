@@ -1,3 +1,8 @@
+"""
+This module is the entry point of the application.
+It loads the model and makes a prediction.
+"""
+
 from models.model_service import ModelService
 from config.config import logger
 

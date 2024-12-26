@@ -1,3 +1,7 @@
+"""
+Sets up the configuration for the project.
+"""
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import DirectoryPath
 from loguru import logger

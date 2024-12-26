@@ -1,3 +1,8 @@
+"""
+This module contains the functions
+to build, train, evaluate and save the model.
+"""
+
 import pickle as pk
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor

@@ -1,3 +1,7 @@
+"""
+This module contains the SQLAlchemy ORM model for the database.
+"""
+
 from sqlalchemy import REAL, INTEGER, VARCHAR
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 

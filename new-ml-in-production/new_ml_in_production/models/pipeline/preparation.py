@@ -1,3 +1,7 @@
+"""
+This module contains the functions to prepare the data for the model.
+"""
+
 import re
 import pandas as pd
 

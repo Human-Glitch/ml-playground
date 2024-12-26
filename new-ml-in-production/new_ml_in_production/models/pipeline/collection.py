@@ -1,3 +1,7 @@
+"""
+This module contains functions for loading data from database
+"""
+
 import pandas as pd
 from sqlalchemy import select
 
