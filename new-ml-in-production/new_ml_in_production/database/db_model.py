@@ -1,8 +1,10 @@
 from sqlalchemy import REAL, INTEGER, VARCHAR
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
+
 class Base(DeclarativeBase):
     pass
+
 
 class RentApartments(Base):
     __tablename__ = 'rent_apartments'
