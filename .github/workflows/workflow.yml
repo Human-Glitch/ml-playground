@@ -5,9 +5,14 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'new-ml-in-production/**'
+
     pull_request:
       branches:
         - main
+      paths:
+      - 'new-ml-in-production/**'
 
 permissions:
   contents: read
