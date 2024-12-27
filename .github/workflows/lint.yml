@@ -1,0 +1,40 @@
+name: Lint workflow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'new-ml-in-production/**'
+
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'new-ml-in-production/**'
+
+permissions:
+  contents: read
+
+jobs:
+
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Build application
+      uses: ./.github/actions/build-applications
+      with:
+        application: 'ml-in-production'
+
+    - name: Run lint with ruff
+      shell: bash
+      run: 
+        cd new-ml-in-production;
+        poetry run make check;
+
+       
+
