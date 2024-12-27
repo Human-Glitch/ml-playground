@@ -1,5 +1,5 @@
 
-name: App Workflow
+name: ml-in-production workflow
 
 on:
   push:
@@ -38,10 +38,12 @@ jobs:
 
     - name: Install dependencies using poetry
       run: 
+        cd new-ml-in-production
         poetry run make install
 
     - name: Run lint with ruff
       run: 
+        cd new-ml-in-production
         poetry run make check
 
        
