@@ -8,10 +8,10 @@ on:
     paths:
       - 'new-ml-in-production/**'
 
-    pull_request:
-      branches:
-        - main
-      paths:
+  pull_request:
+    branches:
+      - main
+    paths:
       - 'new-ml-in-production/**'
 
 permissions:
@@ -23,26 +23,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    -name: Checkout Repository
+    - name: Checkout Repository
       uses: actions/checkout@v4
 
-    -name: Set up Python 3.10.7
+    - name: Set up Python 3.10.7
       uses: actions/setup-python@v5
       with:
         python-version: '3.10.7'
 
-    -name: Install poetry
+    - name: Install poetry
       run: |
         curl -sSL https://install.python-poetry.org | python3 -
         export PATH="$HOME/.local/bin:$PATH"
 
-    -name: Install dependencies using poetry
-    run: 
-      poetry run make install
+    - name: Install dependencies using poetry
+      run: 
+        poetry run make install
 
-    -name: Run lint with ruff
-    run: 
-      poetry run make check
+    - name: Run lint with ruff
+      run: 
+        poetry run make check
 
        
 
