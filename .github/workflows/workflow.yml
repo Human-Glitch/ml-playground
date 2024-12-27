@@ -41,7 +41,7 @@ jobs:
       id: cache-poetry-dependencies
       with:
         path: .venv
-        key: ${{ runner.os }}-${{ hashFiles('new-ml-in-production/poetry.lock') }}
+        key: venv-${{ runner.os }}-${{ hashFiles('new-ml-in-production/poetry.lock') }}
 
     - name: Install dependencies using poetry
       if: steps.cache-poetry-dependencies.outputs.cache-hit != 'true'
