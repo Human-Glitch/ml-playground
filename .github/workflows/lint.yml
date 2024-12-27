@@ -27,8 +27,6 @@ jobs:
 
     - name: Build application
       uses: ./.github/actions/build-applications
-      with:
-        application: 'ml-in-production'
 
     - name: Run lint with ruff
       shell: bash
