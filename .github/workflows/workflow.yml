@@ -26,10 +26,10 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v4
 
-    - name: Set up Python 3.10.7
+    - name: Set up Python ^3.11
       uses: actions/setup-python@v5
       with:
-        python-version: '3.10.7'
+        python-version: '^3.11'
 
     - name: Install poetry
       uses: snok/install-poetry@v1
@@ -41,7 +41,7 @@ jobs:
       id: cache-poetry-dependencies
       with:
         path: .venv
-        key: venv-${{ runner.os }}-${{ hashFiles('new-ml-in-production/poetry.lock') }}
+        key: venv-${{ runner.os }}-${{ hashFiles('**/new-ml-in-production/poetry.lock') }}
 
     - name: Install dependencies using poetry
       if: steps.cache-poetry-dependencies.outputs.cache-hit != 'true'
