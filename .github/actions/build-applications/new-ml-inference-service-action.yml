@@ -1,0 +1,36 @@
+name: Build ml-in-production
+description: Workflow to build ML applications
+
+runs:
+  using: 'composite'
+
+  steps:
+  - name: Checkout Repository
+    uses: actions/checkout@v4
+
+  - name: Set up Python ^3.11
+    uses: actions/setup-python@v5
+    with:
+      python-version: '^3.11'
+
+  - name: Install poetry
+    uses: snok/install-poetry@v1
+    with:
+      virtualenvs-in-project: true
+
+  - name: Load cached venv
+    uses: actions/cache@v4
+    id: cache-poetry-dependencies
+    with:
+      path: new-ml-inference-service/.venv
+      key: venv-${{ runner.os }}-${{ hashFiles('**/new-ml-inference-service/poetry.lock') }}
+
+  - name: Install dependencies using poetry
+    if: steps.cache-poetry-dependencies.outputs.cache-hit != 'true'
+    shell: bash
+    run: 
+      cd new-ml-inference-service;
+      poetry run make install;
+
+       
+

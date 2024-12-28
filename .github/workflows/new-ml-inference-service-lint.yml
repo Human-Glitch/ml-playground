@@ -1,0 +1,38 @@
+name: Lint workflow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'new-ml-inference-service/**'
+
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'new-ml-inference-service/**'
+
+permissions:
+  contents: read
+
+jobs:
+
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Build application
+      uses: ./.github/actions/build-applications
+
+    - name: Run lint with ruff
+      shell: bash
+      run: 
+        cd new-ml-inference-service;
+        poetry run make check;
+
+       
+
