@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "new-ml-inference-service"
+version = "0.1.0"
+description = ""
+authors = ["Kody Buss <kody.buss@zelis.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "^3.1.0"
+pydantic = "^2.10.4"
+loguru = "^0.7.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
