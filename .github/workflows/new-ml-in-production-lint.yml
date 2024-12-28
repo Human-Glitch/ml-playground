@@ -1,4 +1,4 @@
-name: Lint workflow
+name: New Ml In Production Lint Workflow
 
 on:
   push:

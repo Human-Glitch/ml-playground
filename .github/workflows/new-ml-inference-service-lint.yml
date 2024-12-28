@@ -1,4 +1,4 @@
-name: Lint workflow
+name: New Ml Inference Service Lint Workflow
 
 on:
   push:
